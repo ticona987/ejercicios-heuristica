@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Problemas Matemáticos: Ruta Hamiltoniana y Números en Círculo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f9f9f9;
+      color: #2c3e50;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    nav {
+      background-color: #34495e;
+      padding: 10px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+    h2 {
+      text-align: center;
+      color: #34495e;
+    }
+    h3 {
+      color: #2980b9;
+    }
+    ol {
+      margin-left: 20px;
+      background: #f0f8ff;
+      padding: 15px 25px;
+      border-left: 5px solid #2980b9;
+      border-radius: 5px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      overflow-x: auto;
+      border-left: 4px solid #3498db;
+    }
+    .highlight {
+      color: #c0392b;
+      font-weight: bold;
+    }
+    .conclusion {
+      background: #eafaf1;
+      padding: 20px;
+      border-left: 6px solid #2ecc71;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    .circle {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    .circle img {
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Problemas Matemáticos Interactivos</h1>
+
+  <!-- Menú de navegación -->
+  <nav>
+    <a href="#problema1">Problema 1: Ruta Hamiltoniana</a>
+    <a href="#problema2">Problema 2: Números en Círculo</a>
+  </nav>
+
+  <!-- Problema 1 -->
+  <div id="problema1" class="card">
+    <h2>Problema 1: Ruta Hamiltoniana del 1 al 16 con Sumas Cuadradas</h2>
+    <p>Este ejercicio busca encontrar una ruta que recorra todos los números del 1 al 16 una sola vez (camino Hamiltoniano), de modo que la suma de cada par consecutivo sea un <strong>cuadrado perfecto</strong>.</p>
+
+    <h3>Ruta encontrada:</h3>
+    <div class="code-box">
+      <span class="highlight">[16, 9, 7, 2, 14, 11, 5, 4, 12, 13, 3, 6, 10, 15, 1, 8]</span>
+    </div>
+
+    <h3>Verificación de sumas (cada par suma un cuadrado perfecto):</h3>
+    <ul>
+      <li>16 + 9 = 25 ✅</li>
+      <li>9 + 7 = 16 ✅</li>
+      <li>7 + 2 = 9 ✅</li>
+      <li>2 + 14 = 16 ✅</li>
+      <li>14 + 11 = 25 ✅</li>
+      <li>11 + 5 = 16 ✅</li>
+      <li>5 + 4 = 9 ✅</li>
+      <li>4 + 12 = 16 ✅</li>
+      <li>12 + 13 = 25 ✅</li>
+      <li>13 + 3 = 16 ✅</li>
+      <li>3 + 6 = 9 ✅</li>
+      <li>6 + 10 = 16 ✅</li>
+      <li>10 + 15 = 25 ✅</li>
+      <li>15 + 1 = 16 ✅</li>
+      <li>1 + 8 = 9 ✅</li>
+    </ul>
+  </div>
+
+  <!-- Problema 2 -->
+  <div id="problema2" class="card">
+    <h2>Problema 2: Números en un Círculo</h2>
+    <p>En este problema, hay 7 números enteros dispuestos en círculo cuya suma total es 36. Queremos demostrar que al menos un par de números vecinos suma como mínimo 11.</p>
+
+    <div class="circle">
+      <!-- Simulación de círculo -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Circle_-_black_simple.svg/768px-Circle_-_black_simple.svg.png" alt="Círculo de números" />
+    </div>
+
+    <h3>Razonamiento paso a paso:</h3>
+    <ol>
+      <li>Supongamos que todos los pares de vecinos suman menos de 11.</li>
+      <li>Entonces, cada par vecino suma como máximo 10.</li>
+      <li>Hay 7 pares de vecinos (porque es un círculo: A–B–C–D–E–F–G–A).</li>
+      <li>La suma total de las 7 parejas de vecinos sería menor que 7 × 11 = 77, pero además cada número aparece en dos parejas.</li>
+      <li>Entonces, al sumar todas las parejas, estamos sumando el doble del total de los números.</li>
+    </ol>
+
+    <h3>Cálculo:</h3>
+    <pre>
+Suma total de los números: 36
+Cada número aparece en dos pares vecinos
+→ Suma de todas las parejas = 2 × 36 = 72
+
+Si todos los pares suman menos de 11:
+→ Cada suma ≤ 10
+→ Suma total de las parejas ≤ 7 × 10 = 70
+Contradicción: 72 > 70
+    </pre>
+
+    <div class="conclusion">
+      ✅ <strong>Conclusión:</strong> No es posible que todas las parejas de vecinos sumen menos de 11. Por lo tanto, <strong>al menos un par de números vecinos debe sumar 11 o más</strong>.
+    </div>
+  </div>
+
+</body>
+</html>
